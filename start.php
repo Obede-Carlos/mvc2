@@ -5,20 +5,6 @@
         //recurso: controladores
         //accion: metodos del controladores
         //parametros
-    require "../Controller.php";
-    $app = new Controller();
-    
-    // 1- recoger el metodo que pasan como parametro y si no 
-    //especifican 
-    if (isset($_GET["method"])) {
-        $method = $_GET["method"];
-    } else {
-        $method = "home";
-    }
+    require_once "core/App.php";
 
-    if (method_exists($app,$method)) {
-        $app->$method();
-    } else {
-        http_response_code(404);
-        die("Metodo no encontrado"); //exit;
-    }
+    $app = new App();

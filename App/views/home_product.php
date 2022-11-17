@@ -10,9 +10,9 @@
     <?php foreach($products as $item): ?>
     <table>
         <tr>
-            <td>Identificador: <a href=""></a></td>
+            <td>Identificador:</td>
             <td>Descripcion: <?= $item[1] ?></td>
-            <td><a href="?method=show&&id=<?= $item[0] ?>"> Ver detalle</a></td>
+            <td><a href="?method=show_product&&id=<?= $item[0] ?>"> Ver detalle</a></td>
         </tr>
     </table>
     <?php endforeach; ?>
