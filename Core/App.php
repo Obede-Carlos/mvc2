@@ -35,6 +35,7 @@ class App{
         }
 
         //existe metodo en el controlador ?
+        $controllerName = "\\App\\Controllers\\$controllerName";
         $controllerObjet = new $controllerName; //objeto de la clase 
         if (method_exists($controllerObjet,$method)) {
             $controllerObjet->$method($arguments); //method ok -> lo invoco.
