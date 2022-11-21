@@ -44,6 +44,7 @@ class App{
     }
 
     //Una vez que veamos si existe el controlador comprobamos si existe el metodo dentro de este
+    $controllerName = "\\App\\Controllers\\$controllerName";
     $controllerObject = new $controllerName; //$controllerName sera el nombre pasado con la letra mayuscula + Controller. Si el constructor es vacio no hace falta ()
     if(method_exists($controllerObject, $method)){
         $controllerObject->$method($arguments); //Si arguments esta vacio lo llamara vacio, si contiene algo lo llamara con argumentos
