@@ -36,4 +36,6 @@
 
         echo "<h2> Exito </h2>";
 
-    } d
+    }catch (PDOException $e) {
+        echo "Error producido al conectar: " . $e->getMessage();
+    }

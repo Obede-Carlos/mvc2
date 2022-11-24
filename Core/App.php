@@ -26,7 +26,7 @@ class App{
         }
 
         //voy a cargar el controlador. ProductController.php
-        $file = "app/controllers/$controllerName" . ".php";
+        $file = "../app/controllers/$controllerName" . ".php";
         if (file_exists($file)) {
             require_once $file; // importo el fichero si existe
         } else {// si no existe devuelve un error 404 no encontrado.
@@ -35,7 +35,7 @@ class App{
         }
 
         //existe metodo en el controlador ?
-        $controllerName = "\\App\\Controllers\\$controllerName";
+        $controllerName = "\\app\\controllers\\$controllerName";
         $controllerObjet = new $controllerName; //objeto de la clase 
         if (method_exists($controllerObjet,$method)) {
             $controllerObjet->$method($arguments); //method ok -> lo invoco.
